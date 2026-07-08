@@ -1,0 +1,29 @@
+extends common/layout
+
+block content
+  h1.greeting Projects
+  
+  div.action-bar
+    a.btn-pill(href="/admin/projects/add") + Add a project
+
+  div.table-wrapper
+    table.admin-table
+      thead
+        tr
+          th Project Title
+          th Description
+          th Technologies
+      tbody
+        if projects.length === 0
+          tr
+            td(colspan="4" style="color: var(--text-muted); text-align: center; padding: 2rem;") No projects created yet.
+        else
+          each project in projects
+            tr
+              td #[strong #{project.title}]
+              td #{project.description}
+              td #{project.techStack.join(', ')}
+              td
+                div.table-actions
+                  form(action=`/admin/projects/delete/${project._id}` method="POST")
+                    button.btn-action.btn-delete-pill(type="submit") Delete

@@ -1,0 +1,307 @@
+/* Color Palette & Custom System Theme Variables - Light Warm Minimalist */
+:root {
+  --bg-dark: #fbf6f0;       /* Warm cream background */
+  --bg-nav: #fbf6f0;        /* Matching navigation background */
+  --text-white: #222222;     /* Charcoal/off-black for main text and headings */
+  --text-muted: #555555;     /* Slate gray for secondary text */
+  --accent-cyan: #10b981;    /* Emerald green accent color */
+  --accent-hover: #059669;   /* Deeper emerald for hover states */
+  --api-green: #d1fae5;      /* Soft light green background for GET badge */
+  --danger-red: #fee2e2;     /* Soft red background for delete operations */
+  --border: #e5e7eb;         /* Clean minimal divider border line */
+}
+
+/* Reset basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header & Navbar Navigation Layout */
+.navbar {
+  background-color: var(--bg-nav);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--text-white);
+  border-bottom: 2px solid var(--text-white);
+  padding-bottom: 4px;
+}
+
+/* Main Layout Core Container */
+.main-content {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  flex: 1;
+}
+
+.greeting {
+  font-size: 2.5rem;
+  color: var(--text-white);
+  margin-bottom: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.welcome {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.content-section, .api-section {
+  margin-bottom: 3.5rem;
+}
+
+/* Navigation Interface Elements (Pill Shape UI Buttons) */
+.action-bar {
+  margin-bottom: 2.5rem;
+}
+
+.btn-pill {
+  display: inline-block;
+  background-color: var(--accent-cyan);
+  color: #ffffff;
+  padding: 0.65rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.15s ease;
+}
+
+.btn-pill:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Endpoint List Display Block */
+.api-list {
+  list-style: none;
+}
+
+.api-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.api-list li::before {
+  content: "•";
+  padding-right: 0.75rem;
+  color: var(--text-muted);
+}
+
+.api-desc {
+  min-width: 140px;
+  color: var(--text-muted);
+}
+
+.badge-get {
+  background-color: var(--api-green);
+  color: #065f46;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-right: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.api-route {
+  border: 1px solid var(--border);
+  background-color: rgba(0, 0, 0, 0.02);
+  font-family: monospace;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  color: var(--text-white);
+}
+
+/* Table Configurations matching the requested screen blueprint */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  color: var(--text-white);
+  font-weight: 600;
+  padding: 0.75rem 1rem 1.25rem 0;
+  font-size: 1.05rem;
+}
+
+.admin-table td {
+  padding: 1.25rem 1rem 1.25rem 0;
+  vertical-align: middle;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Action Button Modifications */
+.btn-action {
+  display: inline-block;
+  background-color: var(--accent-cyan);
+  color: #ffffff;
+  padding: 0.45rem 1.25rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btn-edit {
+  background-color: var(--accent-cyan);
+}
+
+.btn-edit:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-delete-pill {
+  background-color: var(--danger-red);
+  color: #991b1b;
+}
+
+.btn-delete-pill:hover {
+  background-color: #fca5a5;
+}
+
+.table-actions form {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+/* Layout Split-Container Grid Fallback (Used if you still have forms) */
+.split-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media(min-width: 768px) {
+  .split-container {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+.form-panel {
+  border: 1px solid var(--border);
+  background-color: rgba(0, 0, 0, 0.01);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%;
+  padding: 0.65rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--text-white);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--accent-cyan);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Layout Footer Element */
+.footer {
+  background-color: var(--bg-nav);
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.footer-container p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}

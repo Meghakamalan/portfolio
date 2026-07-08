@@ -1,0 +1,19 @@
+extends common/layout
+
+block content
+  h1.greeting Add New Skill
+  
+  div.form-panel(style="max-width: 600px; margin-top: 2rem;")
+    form(action="/admin/skills/add" method="POST")
+      div.form-group
+        label Skill Name
+        input(type="text" name="name" required=true)
+      div.form-group
+        label Category
+        select(name="category")
+          option(value="Frontend") Frontend
+          option(value="Backend") Backend
+          option(value="Design") Design
+     
+      div(style="display: flex; gap: 1rem; margin-top: 1.5rem;")
+        button.btn-submit(type="submit" style="width: auto; padding: 0.65rem 2rem;") Add Skill

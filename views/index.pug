@@ -1,0 +1,22 @@
+extends common/layout
+
+block content
+  h1.greeting Hello, Megha Kamalan 
+  p.welcome Welcome to your admin dashboard!
+  
+  section.content-section
+    div.button-group
+      a.btn-pill(href="/admin/projects") Manage projects
+      a.btn-pill(href="/admin/skills") Manage skills
+
+  section.api-section
+    h2.section-title API endpoints
+    ul.api-list
+      li
+        span.api-desc Get all projects
+        span.badge-get GET
+        code.api-route /api/projects
+      li
+        span.api-desc Get all skills
+        span.badge-get GET
+        code.api-route /api/skills
