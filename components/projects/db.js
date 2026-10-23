@@ -19,23 +19,14 @@ async function connect() {
 async function initializeProjects() {
   await connect();
   const count = await Project.countDocuments();
-  if (count === 0) { 
+  if (count === 3) { 
     const projectArray = [
-      {
-        title: "Simply Recipes",
-        description: "A mobile-first digital cookbook application featuring a clean design.",
-        techStack: ["HTML", "CSS", "JavaScript"]
-      },
-      {
-        title: "Basketball Game",
-        description: "An interactive web basketball game with hit/miss bounding calculations.",
-        techStack: ["HTML", "CSS", "JavaScript"]
-      },
-      {
-        title: "Whack-a-Mouse Web Game",
-        description: "A single-page web game built to demonstrate front-end logic.",
-        techStack: ["HTML", "CSS", "JavaScript"]
-      }
+{
+  title: "SafeEntry",
+  description: "A full-stack community and visitor management web platform featuring role-based access control for residents, guards, and administrators.",
+  techStack: ["React", "Node.js", "Express", "MongoDB", "REST API"]
+}
+      
     ];
     await Project.insertMany(projectArray); 
     console.log("Projects initialized.");
