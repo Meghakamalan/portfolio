@@ -19,7 +19,7 @@ async function connect() {
 async function initializeProjects() {
   await connect();
   const count = await Project.countDocuments();
-  if (count === 3) { 
+  if (count === 0) { 
     const projectArray = [
 {
   title: "SafeEntry",
