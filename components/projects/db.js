@@ -37,7 +37,7 @@ async function initializeProjects() {
 
   const count = await Project.countDocuments();
 
-  if (count !== 0) {
+  if (count === 0) {
     const projectArray = [
       {
         title: "SafeEntry",
